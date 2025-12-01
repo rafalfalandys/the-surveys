@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>survey-2</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <div class="survey__main-wrapper survey__hidden">
+      <div class="survey__tab" style="display: none">
+        <p class="survey__tab__text">Rate your experience</p>
+      </div>
+    </div>
+
+    <div id="survey__template" style="display: none">
+      <div>
+        <div class="survey__content">
+          <div class="survey__close-btn">
+            <svg viewBox="0 0 24 24" class="close-m">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                d="M13.06 12l4.72-4.72a.75.75 0 00-1.06-1.06L12 10.94 7.28 6.22a.75.75 0 00-1.06 1.06L10.94 12l-4.72 4.72a.75.75 0 101.06 1.06L12 13.06l4.72 4.72a.75.75 0 001.06-1.06z"
+              ></path>
+            </svg>
+          </div>
+          <div class="survey__inner-wrapper">
+            <div class="survey__body">
+              <header class="survey__header">
+                <h2>The Survey!</h2>
+              </header>
+              <div class="survey__survey-wrapper">
+                <p class="survey__description">
+                  <br />
+                  **surveyDescription**
+                </p>
+                <form>
+                  <ol class="survey__questions__list" type="1">
+                    <!-- questions -->
+                  </ol>
+                  <div class="survey__required-description">
+                    <p><span class="survey__required-mark">*</span> Answer required</p>
+                  </div>
+                  <div class="survey__buttons-and-pages">
+                    <button type="button" class="survey__btn survey__btn-previous">Previous</button>
+                    <button type="submit" class="survey__btn survey__btn-submit">
+                      <span>Send</span>
+                      <figure>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
+                          <path
+                            d="M1.42857 6.1H15.1429L11.8429 2.866C11.5614 2.5902 11.4286 2.2612 11.4286 1.9C11.4286 1.2112 12.0093 0.5 12.8571 0.5C13.2364 0.5 13.5671 0.6351 13.8429 0.906L19.5271 6.4766C19.7614 6.7062 20 6.9897 20 7.5C20 8.0103 19.8007 8.256 19.5386 8.5129L13.8429 14.094C13.5671 14.3649 13.2364 14.5 12.8571 14.5C12.0086 14.5 11.4286 13.7888 11.4286 13.1C11.4286 12.7388 11.5614 12.4098 11.8429 12.134L15.1429 8.9H1.42857C0.639999 8.9 0 8.2728 0 7.5C0 6.7272 0.639999 6.1 1.42857 6.1Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </figure>
+                    </button>
+                    <button type="button" class="survey__btn survey__btn-next">Next</button>
+                    <div class="survey__pages">
+                      <span class="survey__current-page">1</span>/<span class="survey__total-pages">2</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="survey__final-view__wrapper survey__hidden">
+                <p class="survey__final-view__text">
+                  Thank you for taking this survey. Your answer has been logged to the console.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="survey__question__content__template" style="display: none">
+      <div>
+        <div class="survey__question__text">
+          <input
+            value="**question**"
+            name="question**questionIndex**"
+            style="display: none"
+            readonly="true"
+            hidden="true"
+          />
+          <h2><span class="survey__required-mark">*</span> **questionIndex**. **question**</h2>
+          <p>**questionDescription**</p>
+          <p class="survey__error__text survey__hidden">Answer required.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="survey__question__template--single" style="display: none">
+      <div>
+        <li class="survey__question">
+          <ol class="survey__answers__list">
+            <!-- answers -->
+          </ol>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__answer__template--single" style="display: none">
+      <div>
+        <li class="survey__answer survey__answer--single">
+          <input
+            type="radio"
+            id="q-**questionKey**__a-**answerKey**"
+            name="answer**questionKey**"
+            value="**answer**"
+            required="true"
+            data-ends-survey="**endsSurvey**"
+          />
+          <label for="q-**questionKey**__a-**answerKey**" class="survey__label">
+            <div class="survey__answer__checkbox">
+              <figure class="survey__checkbox__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!-- prettier-ignore -->
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M416 128L192 384l-96-96"/>
+                </svg>
+              </figure>
+            </div>
+            <span class="survey__answer__text">**answer**</span>
+            <div class="survey__custom-input__wrapper">
+              <input
+                type="text"
+                class="survey__custom-input"
+                name="answer**questionKey**_other"
+                maxlength="**limit**"
+                pattern="^\s*\S+\s*$"
+              />
+            </div>
+          </label>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__question__template--multi" style="display: none">
+      <div>
+        <li class="survey__question">
+          <ol class="survey__answers__list">
+            <!-- answers -->
+          </ol>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__answer__template--multi" style="display: none">
+      <div>
+        <li class="survey__answer survey__answer--multi">
+          <input
+            type="checkbox"
+            id="q-**questionKey**__a-**answerKey**"
+            name="answer**questionKey**"
+            value="**answer**"
+            required="true"
+            data-ends-survey="**endsSurvey**"
+          />
+          <label for="q-**questionKey**__a-**answerKey**" class="survey__label">
+            <div class="survey__answer__checkbox">
+              <figure class="survey__checkbox__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!-- prettier-ignore -->
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M416 128L192 384l-96-96"/>
+                </svg>
+              </figure>
+            </div>
+            <span class="survey__answer__text">**answer**</span>
+            <div class="survey__custom-input__wrapper">
+              <input
+                type="text"
+                class="survey__custom-input"
+                name="answer**questionKey**_other"
+                maxlength="**limit**"
+                pattern="^\s*\S+\s*$"
+              />
+            </div>
+          </label>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__question--scale__template" style="display: none">
+      <div>
+        <li class="survey__question">
+          <div class="survey__scale__wrapper">
+            <span class="survey__scale-legend survey__scale-legend--low">**legendLow**</span>
+            <ol class="survey__answers__list survey__answers__list--scale">
+              <!-- scale -->
+            </ol>
+            <span class="survey__scale-legend survey__scale-legend--high">**legendHigh**</span>
+          </div>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__answer__template--scale" style="display: none">
+      <div>
+        <li class="survey__answer survey__answer--scale">
+          <input
+            type="radio"
+            id="q-**questionKey**__a-**answerKey**"
+            name="answer**questionKey**"
+            value="**answerKey**/**limit**"
+            required="true"
+            data-value="**answerKey**"
+          />
+          <label for="q-**questionKey**__a-**answerKey**" class="survey__label">
+            <div class="survey__answer__checkbox">
+              <span class="survey__answer__text">**answerKey**</span>
+            </div>
+          </label>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__question--open__template" style="display: none">
+      <div>
+        <li class="survey__question">
+          <div class="survey__answers__list">
+            <div class="survey__answer survey__answer--text">
+              <textarea
+                type="checkbox"
+                id="q-**questionIndex**__a-1"
+                name="answer**questionIndex**"
+                maxlength="**limit**"
+                required="true"
+                pattern="^\s*\S+\s*$"
+              ></textarea>
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__question--date__template" style="display: none">
+      <div>
+        <li class="survey__question">
+          <div class="survey__answer"></div>
+        </li>
+      </div>
+    </div>
+
+    <div id="survey__answer__template--date" style="display: none">
+      <div>
+        <input
+          type="date"
+          id="q-**questionKey**__a-1"
+          name="answer**questionKey**"
+          min="**minDate**"
+          max="**maxDate**"
+          required="true"
+        />
+      </div>
+    </div>
+
+    <div id="survey__counter__template" style="display: none">
+      <div>
+        <div class="survey__counter"><span class="survey__counter--value">0</span>/**limit**</div>
+      </div>
+    </div>
+  </body>
+</html>

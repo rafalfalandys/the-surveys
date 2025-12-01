@@ -1,0 +1,27 @@
+.description {
+  margin-bottom: 2rem;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+}
+
+.questionsPerPage {
+  width: 5rem;
+}
+
+.header2 {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.revealBtn {
+  display: block;
+  justify-self: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+}

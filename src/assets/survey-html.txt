@@ -1,0 +1,294 @@
+<div class="snr-survey__main-wrapper" style="display: none">
+  <div class="snr-survey__tab" style="display: none">
+    <p class="snr-survey__tab__text">Rate your experience</p>
+  </div>
+</div>
+
+<div id="snr-survey__template" style="display: none">
+  <div>
+    <div class="snr-survey__content">
+      <div class="snr-survey__close-btn"
+      {%- if '#### type: "select", id: "display__type", order: 1, options: [{ value: "popup", displayName: "Popup" }, { value: "bottom-right", displayName: "Modal bottom-right" }, { value: "slide", displayName: "Slide-in" }, { value: "inapp", displayName: "In-App" }], label: "Display type", defaultValue: "popup", groupName: "General settings", groupId: "settings-general" !####' != 'inapp' -%}
+      style="display: none"
+      {%- endif -%}
+      >
+        <svg viewBox="0 0 24 24" class="close-m">
+          <path fill="none" d="M0 0h24v24H0z"></path>
+          <path
+            d="M13.06 12l4.72-4.72a.75.75 0 00-1.06-1.06L12 10.94 7.28 6.22a.75.75 0 00-1.06 1.06L10.94 12l-4.72 4.72a.75.75 0 101.06 1.06L12 13.06l4.72 4.72a.75.75 0 001.06-1.06z"
+          ></path>
+        </svg>
+      </div>
+      <div class="snr-survey__inner-wrapper">
+        <div class="snr-survey__body">
+          <header class="snr-survey__header">
+            <figure class="snr-survey__image">
+              <img
+                src="https://upload.snrcdn.net/89c52a4790962b58713e7212f2c9a015cacb1536/default/origin/06010ae01caf40e4b8f042154ccf008a.png"
+                alt="logo"
+              />
+            </figure>
+          </header>
+          <div class="snr-survey__survey-wrapper">
+            <p class="snr-survey__description">
+              #### type: "string", id: "survey__description", groupName: "Copy texts", groupId: "texts-copy", label:"Survey description", description: "It is a html input. If you want to jump to next line use <br />tag,and if you want to bold something use <strong>BOLD TEXT</strong>.", defaultValue: "Hi,<br />Thanks for taking this survey. It's anonymous and its filling<strong> will not take longer than 1 minute.</strong>"!####
+            </p>
+            <form>
+              <ol class="snr-survey__questions__list" type="1">
+                <!-- questions -->
+              </ol>
+              <div class="snr-survey__required-description">
+                <p><span class="snr-survey__required-mark">*</span> Answer required</p>
+              </div>
+              <div class="snr-survey__buttons-and-pages">
+                <button type="button" class="snr-survey__btn snr-survey__btn-previous">
+                  #### type: "string", id: "btn-prev__copy", label: "Previous button copy", groupName: "Copy texts",
+                  groupId: "texts-copy", defaultValue: "Previous" !####
+                </button>
+                <button type="submit" class="snr-survey__btn snr-survey__btn-submit">
+                  <span
+                    >#### type: "string", id: "btn-send__copy", label: "Send button copy", groupName: "Copy texts",
+                    groupId: "texts-copy", defaultValue: "Send" !####</span
+                  >
+                  <figure>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
+                      <path
+                        d="M1.42857 6.1H15.1429L11.8429 2.866C11.5614 2.5902 11.4286 2.2612 11.4286 1.9C11.4286 1.2112 12.0093 0.5 12.8571 0.5C13.2364 0.5 13.5671 0.6351 13.8429 0.906L19.5271 6.4766C19.7614 6.7062 20 6.9897 20 7.5C20 8.0103 19.8007 8.256 19.5386 8.5129L13.8429 14.094C13.5671 14.3649 13.2364 14.5 12.8571 14.5C12.0086 14.5 11.4286 13.7888 11.4286 13.1C11.4286 12.7388 11.5614 12.4098 11.8429 12.134L15.1429 8.9H1.42857C0.639999 8.9 0 8.2728 0 7.5C0 6.7272 0.639999 6.1 1.42857 6.1Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </figure>
+                </button>
+                <button type="button" class="snr-survey__btn snr-survey__btn-next">
+                  #### type: "string", id: "btn-next__copy", label: "Next button copy", groupName: "Copy texts",
+                  groupId: "texts-copy", defaultValue: "Next" !####
+                </button>
+                <div class="snr-survey__pages">
+                  <span class="snr-survey__current-page">1</span>/<span class="snr-survey__total-pages">2</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="snr-survey__final-view__wrapper snr-survey__hidden">
+            <!-- 
+            <figure class="snr-survey__final-view__image">
+              <img
+                src=""
+                alt=""
+              />
+            </figure> 
+            <h3 class="snr-survey__final-view__header"></h3> 
+            -->
+            <p class="snr-survey__final-view__text">
+              #### type: "string", id: "final-text", label: "Final text", groupName: "Copy texts", groupId:
+              "texts-copy", defaultValue: "Thank you for taking this survey.", description: "This message appears when
+              the survey is submitted." !####
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="snr-survey__question__content__template" style="display: none">
+  <div>
+    <div class="snr-survey__question__text">
+      <input
+        value="**question**"
+        name="question**questionIndex**"
+        style="display: none"
+        readonly="true"
+        hidden="true"
+      />
+      <h2><span class="snr-survey__required-mark">*</span> **questionIndex**. **question**</h2>
+      <p>**questionDescription**</p>
+      <p class="snr-survey__error__text snr-survey__hidden">
+        #### type: "string", id: "error__text", label: "Error text", groupName: "Copy texts", groupId: "texts-copy",
+        defaultValue: "Answer required.", description: "This message appears beneath questions that were mandatory but
+        left unanswered when the survey responses are submitted." !####
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="snr-survey__question__template--single" style="display: none">
+  <div>
+    <li class="snr-survey__question">
+      <ol class="snr-survey__answers__list">
+        <!-- answers -->
+      </ol>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__answer__template--single" style="display: none">
+  <div>
+    <li class="snr-survey__answer snr-survey__answer--single">
+      <input
+        type="radio"
+        id="q-**questionKey**__a-**answerKey**"
+        name="answer**questionKey**"
+        value="**answer**"
+        required="true"
+        data-ends-survey="**endsSurvey**"
+      />
+      <label for="q-**questionKey**__a-**answerKey**" class="snr-survey__label">
+        <div class="snr-survey__answer__checkbox">
+          <figure class="snr-survey__checkbox__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!-- prettier-ignore -->
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M416 128L192 384l-96-96"/>
+            </svg>
+          </figure>
+        </div>
+        <span class="snr-survey__answer__text">**answer**</span>
+        <div class="snr-survey__custom-input__wrapper">
+          <input
+            type="text"
+            class="snr-survey__custom-input"
+            name="answer**questionKey**_other"
+            maxlength="**limit**"
+          />
+        </div>
+      </label>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__question__template--multi" style="display: none">
+  <div>
+    <li class="snr-survey__question">
+      <ol class="snr-survey__answers__list">
+        <!-- answers -->
+      </ol>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__answer__template--multi" style="display: none">
+  <div>
+    <li class="snr-survey__answer snr-survey__answer--multi">
+      <input
+        type="checkbox"
+        id="q-**questionKey**__a-**answerKey**"
+        name="answer**questionKey**"
+        value="**answer**"
+        required="true"
+        data-ends-survey="**endsSurvey**"
+      />
+      <label for="q-**questionKey**__a-**answerKey**" class="snr-survey__label">
+        <div class="snr-survey__answer__checkbox">
+          <figure class="snr-survey__checkbox__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!-- prettier-ignore -->
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M416 128L192 384l-96-96"/>
+            </svg>
+          </figure>
+        </div>
+        <span class="snr-survey__answer__text">**answer**</span>
+        <div class="snr-survey__custom-input__wrapper">
+          <input
+            type="text"
+            class="snr-survey__custom-input"
+            name="answer**questionKey**_other"
+            maxlength="**limit**"
+          />
+        </div>
+      </label>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__question--scale__template" style="display: none">
+  <div>
+    <li class="snr-survey__question">
+      <ol class="snr-survey__answers__list snr-survey__answers__list--scale">
+        <!-- scale -->
+      </ol>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__answer__template--scale" style="display: none">
+  <div>
+    <li class="snr-survey__answer snr-survey__answer--scale">
+      <input
+        type="radio"
+        id="q-**questionKey**__a-**answerKey**"
+        name="answer**questionKey**"
+        value="**answerKey**/**limit**"
+        required="true"
+        data-value="**answerKey**"
+      />
+      <label for="q-**questionKey**__a-**answerKey**" class="snr-survey__label">
+        <div class="snr-survey__answer__checkbox">
+          <span class="snr-survey__answer__text">**answerKey**</span>
+        </div>
+      </label>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__answer__template--image" style="display: none">
+  <div>
+    <li class="snr-survey__answer snr-survey__answer--image">
+      <input
+        type="radio"
+        id="q-**questionKey**__a-**answerKey**"
+        name="answer**questionKey**"
+        value="**answerKey**/**limit**"
+        required="true"
+        data-value="**answerKey**"
+      />
+      <label for="q-**questionKey**__a-**answerKey**" class="snr-survey__label">
+        <div class="snr-survey__answer__checkbox">
+          <figure class="snr-survey__checkbox__img">
+            <img src="" alt="smile" />
+          </figure>
+        </div>
+      </label>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__question--open__template" style="display: none">
+  <div>
+    <li class="snr-survey__question">
+      <div class="snr-survey__answers__list">
+        <div class="snr-survey__answer snr-survey__answer--text">
+          <textarea
+            type="checkbox"
+            id="q-**questionIndex**__a-1"
+            name="answer**questionIndex**"
+            maxlength="**limit**"
+            required="true"
+          ></textarea>
+        </div>
+      </div>
+    </li>
+  </div>
+</div>
+
+<div id="snr-survey__question--date__template" style="display: none">
+  <div>
+    <li class="snr-survey__question">
+      <div class="snr-survey__answer">
+        <input 
+          type="date" 
+          id="q-**questionKey**__a-1" 
+          name="answer**questionKey**" 
+          min="**minDate**"
+          max="**maxDate**"
+        />
+      </div>
+    </li>
+  </div>
+</div>
+
+
+<div id="snr-survey__counter__template" style="display: none">
+  <div>
+    <div class="snr-survey__counter"><span class="snr-survey__counter--value">0</span>/**limit**</div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.answerWrapper {
+  display: flex;
+  align-items: end;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.orderArrows {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}

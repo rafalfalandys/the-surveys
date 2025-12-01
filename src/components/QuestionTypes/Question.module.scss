@@ -1,0 +1,68 @@
+.questionContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.collapseContent {
+  text-align: left;
+}
+
+.question {
+  width: 100%;
+}
+
+.header {
+  font-size: 16px;
+  margin: 0;
+}
+
+.settingsRow1 {
+  display: grid;
+  grid-template-columns: 1fr 4rem;
+  justify-items: start;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+}
+
+.textAndBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.orderButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: min-content;
+  width: 1.5rem;
+}
+
+.typeAndRequired {
+  display: flex;
+  align-items: end;
+}
+
+.type {
+  width: 100%;
+  margin-bottom: 16px;
+  flex-basis: 100%;
+}
+
+.checkboxWrapper {
+  width: 1rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.icon {
+  transition: all 0.2s ease-in-out;
+}
+
+.icon:hover {
+  scale: 1.2;
+  cursor: pointer;
+}

@@ -1,0 +1,131 @@
+[
+  {
+    "question": "When would you prefer to receive updates from us?",
+    "required": false,
+    "maxDate": "2025-12-12",
+    "minDate": "today",
+    "type": "date"
+  },
+  {
+    "question": "How appealing do you find our new website design?",
+    "required": false,
+    "legendLow": "Not Appealing",
+    "legendHigh": "Very Appealing",
+    "type": "scale",
+    "length": 10
+  },
+  {
+    "question": "Which features do you value most in a loyalty program?",
+    "required": true,
+    "answers": [
+      {
+        "answer": "Cashback Rewards",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Exclusive Discounts",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Early Access to Sales",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Birthday Gifts",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Loyalty Points System",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Other (please specify):",
+        "options": {
+          "isOpen": true,
+          "limit": 20
+        }
+      }
+    ],
+    "type": "multi"
+  },
+  {
+    "question": "How likely are you to explore our new product categories?",
+    "required": true,
+    "type": "scale",
+    "legendLow": "Not Likely",
+    "legendHigh": "Very Likely",
+    "length": 15
+  },
+  {
+    "question": "How would you rate the clarity of information provided on our website?",
+    "required": true,
+    "type": "scale",
+    "legendLow": "Very Poor",
+    "legendHigh": "Excellent",
+    "length": 10
+  },
+  {
+    "question": "How satisfied are you with our customer support response time?",
+    "required": false,
+    "type": "single",
+    "answers": [
+      {
+        "answer": "Very Satisfied",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Satisfied",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Neutral",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Unsatisfied",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      },
+      {
+        "answer": "Very Unsatisfied",
+        "options": {
+          "isOpen": false,
+          "limit": 20
+        }
+      }
+    ]
+  },
+  {
+    "question": "What improvement would most enhance your overall satisfaction?",
+    "required": true,
+    "type": "open",
+    "limit": 20,
+    "uploadImg": true
+  }
+]
