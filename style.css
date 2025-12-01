@@ -155,15 +155,21 @@
   justify-content: center;
   gap: 10px;
   flex-shrink: 0;
+  position: relative;
 }
 
 .survey__scale-legend {
   flex-shrink: 0;
   margin: 0.8rem 0;
+  position: absolute;
+  top: 0;
 }
 
+.survey__scale-legend--low {
+  left: 0;
+}
 .survey__scale-legend--high {
-  align-self: end;
+  right: 0;
 }
 
 .survey__required-mark {
@@ -212,6 +218,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 2.5rem;
 }
 
 .survey__label {
