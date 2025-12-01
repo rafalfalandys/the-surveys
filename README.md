@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# The Surveys!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+install: npm i  
+run: npm run dev
 
-Currently, two official plugins are available:
+## Prologue
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Surveys! is a dynamic survey-generator app. Using a clean configuration UI, it generates customizable, multi-page surveys based on 5 different question types.
 
-## React Compiler
+Tech stack:
+React • TypeScript • Redux • Ant Design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## The core
 
-## Expanding the ESLint configuration
+The application consists of two layers:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Survey Builder (React): a full UI for configuring survey settings and building the list of questions.
+2. Survey Runtime (Vanilla TypeScript): a lightweight script injected into the global scope, exposing a createSurvey() function used to render the actual survey based on the builder’s exported configuration.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This approach keeps the builder component-driven and interactive, while the final survey stays framework-agnostic and easily embeddable anywhere.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Builder:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+A configurable form that lets the user define:
+• General survey settings:
+• description visible at the top
+• number of questions per page
+• validation style (disabled buttons vs. highlighting unanswered required questions)
+• Questions:
+All question parameters are fully customizable, including open text limits, required flags, answer options, date boundaries, etc.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+All configurations are stored in Redux and synchronized into a JSON used later to launch the survey preview.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Survey:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The survey is rendered as a paginated form with:
+• 5 supported question types
+• a global description
+• client-side validation
+• a final summary/thank-you page
+• console logging of submitted results (for now)
+
+## Next steps:
+
+Planned improvements include:
+• Backend for storing multiple surveys
+• Publishing / sharing surveys
+• Collecting responses
+• Dashboard for analytics & results visualisation
