@@ -6,7 +6,7 @@ const ScaleLegend: React.FC<{ questionIndex: number }> = ({ questionIndex }) => 
   const { questionData, legendMinHandler, legendMaxHandler } = useQuestion(questionIndex);
 
   return (
-    <div className="survey__flex--align-end">
+    <div className="builder__flex--align-end">
       <label>Legend - min:</label>
       <Input type="text" onChange={legendMinHandler} value={(questionData as QuestionScale).legendLow} />
       <label>Legend - max:</label>

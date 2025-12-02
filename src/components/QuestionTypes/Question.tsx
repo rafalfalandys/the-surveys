@@ -61,13 +61,13 @@ const Question: React.FC<QuestionProps> = ({ questionIndex, questionId }) => {
             <Input
               type="text"
               onChange={questionTextHandler}
-              className="survey__text-input"
+              className="builder__text-input"
               value={questionData.question}
             />
             <Input
               type="checkbox"
               onChange={changeRequiredHandler}
-              className="survey__checkbox"
+              className="builder__checkbox"
               checked={questionData.required}
               size="small"
             />

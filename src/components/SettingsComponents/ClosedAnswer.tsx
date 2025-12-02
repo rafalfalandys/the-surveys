@@ -21,22 +21,22 @@ const ClosedAnswer: React.FC<AnswerType> = ({ questionIndex, answerIndex }) => {
   } = useAnswer(questionIndex, answerIndex);
 
   return (
-    <div className="survey__flex--align-end">
+    <div className="builder__flex--align-end">
       <label>{`Answer ${answerIndex + 1}`}</label>
-      <Input onChange={textHandler} className="survey__text-input" value={answerData.answer} />
+      <Input onChange={textHandler} className="builder__text-input" value={answerData.answer} />
       <Button onClick={removeAnswerHandler}>-</Button>
       <label>Ends survey?</label>
       <Input
         type="checkbox"
         onChange={endsSurveyHandler}
-        className="survey__checkbox"
+        className="builder__checkbox"
         checked={answerData.options.endsSurvey}
       />
       <label>Is open?</label>
       <Input
         type="checkbox"
         onChange={isOpenHandler}
-        className="survey__checkbox"
+        className="builder__checkbox"
         checked={answerData.options.isOpen}
       />
       {answerData.options.isOpen && (

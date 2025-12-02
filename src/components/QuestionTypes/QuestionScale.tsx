@@ -16,7 +16,7 @@ const QuestionScale: React.FC<QuestionScaleProps> = ({ questionIndex }) => {
   const { changeLengthHandler } = useQuestion(questionIndex);
 
   return (
-    <div className="survey__flex--align-end">
+    <div className="builder__flex--align-end">
       <label>Length:</label>
       <Input type="number" onChange={changeLengthHandler} value={questionData.length} className={classes.scaleValue} />
       <ScaleLegend questionIndex={questionIndex} />

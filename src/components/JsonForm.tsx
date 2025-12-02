@@ -45,7 +45,7 @@ const JsonForm: React.FC = () => {
   return (
     <Form
       form={form}
-      className="survey__form"
+      className="builder__form"
       onFinish={setSurveyDataHandler}
       initialValues={{
         questionsData: JSON.stringify(sampleQuestions),

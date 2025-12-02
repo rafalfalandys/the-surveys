@@ -22,7 +22,7 @@ const QuestionSingleAndMulti: React.FC<QuestionSingleAndMultiProps> = ({ questio
         <Input
           type="checkbox"
           onChange={shuffleAnswersHandler}
-          className="survey__checkbox"
+          className="builder__checkbox"
           checked={question.shuffleAnswers}
         />
       </div>

@@ -5,13 +5,13 @@
   font-family: Roboto, sans-serif;
 }
 
-.survey__form {
+.builder__form {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
 }
 
-.survey__flex--align-end {
+.builder__flex--align-end {
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -19,15 +19,15 @@
   height: 2rem;
 }
 
-.survey__flex--align-end label {
+.builder__flex--align-end label {
   flex-shrink: 0;
 }
 
-.survey__text-input {
+.builder__text-input {
   width: 100%;
 }
 
-.survey__checkbox {
+.builder__checkbox {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -37,6 +37,18 @@
   flex-shrink: 0;
 }
 
-.survey__checkbox > div:first-child {
+.builder__checkbox > div:first-child {
   margin-bottom: 4px;
+}
+
+@media only screen and (max-width: 500px) {
+  .builder__form {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .builder__form {
+    padding: 0.5rem;
+  }
 }

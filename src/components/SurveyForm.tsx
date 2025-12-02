@@ -34,20 +34,21 @@ const QuestionsForm = () => {
 
   return (
     <>
-      <Form className="survey__form" onValuesChange={(e) => console.log(e)} onFinish={revealSurvey}>
+      <Form className="builder__form" onValuesChange={(e) => console.log(e)} onFinish={revealSurvey}>
+        <h2>Survey settings:</h2>
         <div className={classes.description}>
-          <h2>Survey settings:</h2>
+          <label className={classes.settingName}>Description (top of a page):</label>
           <TextArea
-            rows={4}
-            className="survey__text-input"
+            rows={2}
+            className="builder__text-input"
             value={surveyData.settings.description}
             onChange={descriptionHandler}
           />
         </div>
 
         <div className={classes.settingsGrid}>
-          <span className={classes.settingName}>Questions per page:</span>
-          <span className={classes.settingName}>Validation type:</span>
+          <label className={classes.settingName}>Questions per page:</label>
+          <label className={classes.settingName}>Validation type:</label>
           <Input
             type="number"
             className={classes.questionsPerPage}

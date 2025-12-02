@@ -23,9 +23,9 @@ const QuestionDate: React.FC<QuestionDateProps> = ({ questionIndex }) => {
 
   return (
     <>
-      <div className="survey__flex--align-end">
+      <div className="builder__flex--align-end">
         <label>Minimum date limit:</label>
-        <Input type="checkbox" onChange={showMinLimitHandler} className="survey__checkbox" checked={isMinLimit} />
+        <Input type="checkbox" onChange={showMinLimitHandler} className="builder__checkbox" checked={isMinLimit} />
         {(isMinLimit || questionData.minDate) && (
           <>
             <label>Day of taking the survey</label>
@@ -33,7 +33,7 @@ const QuestionDate: React.FC<QuestionDateProps> = ({ questionIndex }) => {
               type="checkbox"
               onChange={changeDateHandler}
               data-type="minDateToday"
-              className="survey__checkbox"
+              className="builder__checkbox"
               checked={questionData.minDate === "today"}
             />
             {isDateMinVisible && (
@@ -42,9 +42,9 @@ const QuestionDate: React.FC<QuestionDateProps> = ({ questionIndex }) => {
           </>
         )}
       </div>
-      <div className="survey__flex--align-end">
+      <div className="builder__flex--align-end">
         <label>Maximum date limit:</label>
-        <Input type="checkbox" onChange={showMaxLimitHandler} className="survey__checkbox" checked={isMaxLimit} />
+        <Input type="checkbox" onChange={showMaxLimitHandler} className="builder__checkbox" checked={isMaxLimit} />
         {(isMaxLimit || questionData.maxDate) && (
           <>
             <label>Day of taking the survey</label>
@@ -52,7 +52,7 @@ const QuestionDate: React.FC<QuestionDateProps> = ({ questionIndex }) => {
               type="checkbox"
               onChange={changeDateHandler}
               data-type="maxDateToday"
-              className="survey__checkbox"
+              className="builder__checkbox"
               checked={questionData.maxDate === "today"}
             />
             {(isDateMaxVisible || (questionData.maxDate && questionData.maxDate !== "today")) && (
