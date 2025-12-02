@@ -15,3 +15,20 @@
   justify-content: space-between;
   gap: 10px;
 }
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.answerRow {
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 670px) {
+  .answerRow {
+    width: 100%;
+  }
+}

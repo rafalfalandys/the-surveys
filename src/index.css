@@ -41,7 +41,12 @@
   margin-bottom: 4px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 670px) {
+  .builder__flex--align-end {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
   .builder__form {
     padding: 1rem;
   }

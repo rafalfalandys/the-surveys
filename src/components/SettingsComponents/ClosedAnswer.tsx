@@ -23,22 +23,28 @@ const ClosedAnswer: React.FC<AnswerType> = ({ questionIndex, answerIndex }) => {
   return (
     <div className="builder__flex--align-end">
       <label>{`Answer ${answerIndex + 1}`}</label>
-      <Input onChange={textHandler} className="builder__text-input" value={answerData.answer} />
-      <Button onClick={removeAnswerHandler}>-</Button>
-      <label>Ends survey?</label>
-      <Input
-        type="checkbox"
-        onChange={endsSurveyHandler}
-        className="builder__checkbox"
-        checked={answerData.options.endsSurvey}
-      />
-      <label>Is open?</label>
-      <Input
-        type="checkbox"
-        onChange={isOpenHandler}
-        className="builder__checkbox"
-        checked={answerData.options.isOpen}
-      />
+      <div className={`${classes.inputRow} ${classes.answerRow}`}>
+        <Input onChange={textHandler} className="builder__text-input" value={answerData.answer} />
+        <Button onClick={removeAnswerHandler}>-</Button>
+      </div>
+      <div className={classes.inputRow}>
+        <label>Ends survey?</label>
+        <Input
+          type="checkbox"
+          onChange={endsSurveyHandler}
+          className="builder__checkbox"
+          checked={answerData.options.endsSurvey}
+        />
+      </div>
+      <div className={classes.inputRow}>
+        <label>Is open?</label>
+        <Input
+          type="checkbox"
+          onChange={isOpenHandler}
+          className="builder__checkbox"
+          checked={answerData.options.isOpen}
+        />
+      </div>
       {answerData.options.isOpen && (
         <>
           <label>Limit:</label>

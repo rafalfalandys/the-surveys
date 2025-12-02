@@ -81,7 +81,6 @@ const Question: React.FC<QuestionProps> = ({ questionIndex, questionId }) => {
             <Option value="single">Single choice</Option>
             <Option value="open">Open</Option>
             <Option value="scale">Scale</Option>
-            <Option value="images">Images</Option>
             <Option value="date">Date</Option>
           </Select>
           {renderQuestionSettings()}
