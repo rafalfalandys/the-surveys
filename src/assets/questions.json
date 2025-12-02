@@ -1,12 +1,5 @@
 [
   {
-    "question": "When would you prefer to receive updates from us?",
-    "required": false,
-    "maxDate": "2025-12-12",
-    "minDate": "today",
-    "type": "date"
-  },
-  {
     "question": "How appealing do you find our new website design?",
     "required": false,
     "legendLow": "Not Appealing",
@@ -120,6 +113,13 @@
         }
       }
     ]
+  },
+  {
+    "question": "When would you prefer to receive updates from us?",
+    "required": false,
+    "maxDate": "2025-12-12",
+    "minDate": "today",
+    "type": "date"
   },
   {
     "question": "What improvement would most enhance your overall satisfaction?",
