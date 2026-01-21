@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import useQuestion from "../../hooks/useQuestion";
-import { type QuestionScale } from "../../types";
+import { type QuestionScale } from "../../types/surveyTypes";
 
 const ScaleLegend: React.FC<{ questionIndex: number }> = ({ questionIndex }) => {
   const { questionData, legendMinHandler, legendMaxHandler } = useQuestion(questionIndex);

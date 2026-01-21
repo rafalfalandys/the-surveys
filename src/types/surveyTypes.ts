@@ -71,3 +71,9 @@ export type AnswerIndex = {
   index: number;
   no: number;
 };
+
+declare global {
+  interface Window {
+    createSurvey: (questions: AnyQuestion[], config: SurveySettings) => void;
+  }
+}

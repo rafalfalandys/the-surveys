@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { questionsActions } from "../store/question-slice";
 import { type RootState } from "../store";
-import { type QuestionCheckbox, type QuestionRadio } from "../types";
+import { type QuestionCheckbox, type QuestionRadio } from "../types/surveyTypes";
 
 const useAnswer = (questionIndex: number, answerIndex: number) => {
   const dispatch = useDispatch();
   const answerData = useSelector(
-    (state: RootState) => state.questions.questions[questionIndex] as QuestionRadio | QuestionCheckbox
+    (state: RootState) => state.questions.questions[questionIndex] as QuestionRadio | QuestionCheckbox,
   ).answers[answerIndex];
 
   const textHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -21,7 +21,7 @@ const useAnswer = (questionIndex: number, answerIndex: number) => {
         questionIndex,
         answerIndex,
         optionsData: { isOpen: checked },
-      })
+      }),
     );
   };
 
@@ -32,7 +32,7 @@ const useAnswer = (questionIndex: number, answerIndex: number) => {
         questionIndex,
         answerIndex,
         optionsData: { endsSurvey: checked },
-      })
+      }),
     );
   };
 

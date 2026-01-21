@@ -8,7 +8,7 @@ import {
   type QuestionRadio,
   type QuestionScale,
   type AnswerOptions,
-} from "../types";
+} from "../types/surveyTypes";
 import {
   DEFAULT_SCALE_LENGTH,
   DEFAULT_CHARS_LIMIT,
@@ -51,7 +51,7 @@ const questionsSlice = createSlice({
       action: {
         type: string;
         payload: { questionIndex: number; newQuestionIndex: number };
-      }
+      },
     ) {
       const { questionIndex, newQuestionIndex } = action.payload;
       const question = state.questions[questionIndex];
@@ -76,11 +76,11 @@ const questionsSlice = createSlice({
       action: {
         type: string;
         payload: { questionIndex: number; answerIndex: number };
-      }
+      },
     ) {
       const { questionIndex, answerIndex } = action.payload;
       const newAnswers = (state.questions[questionIndex] as QuestionRadio | QuestionCheckbox).answers.filter(
-        (_, i) => i !== answerIndex
+        (_, i) => i !== answerIndex,
       );
 
       (state.questions[questionIndex] as QuestionRadio | QuestionCheckbox).answers = newAnswers;
@@ -96,7 +96,7 @@ const questionsSlice = createSlice({
       action: {
         type: string;
         payload: { questionIndex: number; answerIndex: number; value: string };
-      }
+      },
     ) {
       const { questionIndex, answerIndex, value } = action.payload;
 
@@ -112,7 +112,7 @@ const questionsSlice = createSlice({
           answerIndex: number;
           optionsData: Partial<AnswerOptions>;
         };
-      }
+      },
     ) {
       const { questionIndex, answerIndex, optionsData } = action.payload;
 
@@ -133,7 +133,7 @@ const questionsSlice = createSlice({
           answerIndex: number;
           newAnswerIndex: number;
         };
-      }
+      },
     ) {
       const { questionIndex, answerIndex, newAnswerIndex } = action.payload;
       const question = state.questions[questionIndex] as QuestionRadio | QuestionCheckbox;
@@ -161,7 +161,7 @@ const questionsSlice = createSlice({
       action: {
         type: string;
         payload: { questionIndex: number; value: string };
-      }
+      },
     ) {
       const { questionIndex, value } = action.payload;
       (state.questions[questionIndex] as QuestionScale).legendLow = value;
@@ -172,7 +172,7 @@ const questionsSlice = createSlice({
       action: {
         type: string;
         payload: { questionIndex: number; value: string };
-      }
+      },
     ) {
       const { questionIndex, value } = action.payload;
       (state.questions[questionIndex] as QuestionScale).legendHigh = value;
@@ -184,7 +184,7 @@ const questionsSlice = createSlice({
       action: {
         type: string;
         payload: { questionIndex: number; questionData: Partial<AnyQuestion> };
-      }
+      },
     ) {
       const { questionIndex, questionData } = action.payload;
       const qState = state.questions[questionIndex];

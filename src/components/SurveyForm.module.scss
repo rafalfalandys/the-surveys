@@ -20,6 +20,13 @@
   margin-bottom: 0.5rem;
 }
 
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .revealBtn {
   display: block;
   justify-self: center;

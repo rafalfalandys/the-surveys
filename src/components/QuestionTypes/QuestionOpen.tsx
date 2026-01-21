@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import useQuestion from "../../hooks/useQuestion";
-import { type QuestionOpen as OpenType } from "../../types";
+import { type QuestionOpen as OpenType } from "../../types/surveyTypes";
 
 type QuestionOpenProps = {
   questionIndex: number;

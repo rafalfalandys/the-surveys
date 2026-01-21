@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { questionsActions } from "../store/question-slice";
 import { type SelectValue } from "antd/lib/select";
 import { type RootState } from "../store";
-import { type QuestionType } from "../types";
+import { type QuestionType } from "../types/surveyTypes";
 
 const useQuestion = (questionIndex: number) => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const useQuestion = (questionIndex: number) => {
       questionsActions.setQuestionData({
         questionIndex,
         questionData: { type: value as QuestionType },
-      })
+      }),
     );
   };
 

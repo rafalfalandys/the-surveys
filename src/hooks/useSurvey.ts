@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { questionsActions } from "../store/question-slice";
 import { surveyActions } from "../store/survey-slice";
 import { type RootState } from "../store";
-import { type AnyQuestion, type SurveySettings, type ValidationType } from "../types";
+import { type AnyQuestion, type SurveySettings, type ValidationType } from "../types/surveyTypes";
 
 const useSurvey = () => {
   const dispatch = useDispatch();
@@ -20,10 +20,12 @@ const useSurvey = () => {
     }
   };
 
+  const setSurveyTitle = (data: string) => {
+    dispatch(surveyActions.setTitle(data));
+  };
   const setSurveySettings = (data: SurveySettings) => {
     dispatch(surveyActions.setSurveySettings(data));
   };
-
   const descriptionHandler: React.ChangeEventHandler = (e) => {
     const { value } = e.target as HTMLInputElement;
     dispatch(surveyActions.setDescription(value));
@@ -35,6 +37,10 @@ const useSurvey = () => {
   const validationTypeHandler = (value: ValidationType) => {
     dispatch(surveyActions.setValidationType(value));
   };
+  const resetSurveyHandler = () => {
+    dispatch(surveyActions.setInitialState());
+    dispatch(questionsActions.setQuestions([]));
+  };
 
   const setSurveyDescription = (description: string) => {
     try {
@@ -45,6 +51,7 @@ const useSurvey = () => {
   };
 
   return {
+    setSurveyTitle,
     surveySettings,
     questionsData,
     setSurveySettings,
@@ -53,6 +60,7 @@ const useSurvey = () => {
     setQuestionsData,
     questionsPerPageHandler,
     validationTypeHandler,
+    resetSurveyHandler,
   };
 };
 

@@ -4,13 +4,13 @@ import { Form } from "antd";
 import useSurvey from "../hooks/useSurvey";
 import sampleQuestions from "../assets/questions.json";
 import { useEffect, useState } from "react";
-import type { AnyQuestion, SurveySettings } from "../types";
+import type { AnyQuestion, SurveySettings } from "../types/surveyTypes";
 import classes from "./JsonForm.module.scss";
 
 const JsonForm: React.FC = () => {
   const [form] = Form.useForm();
   const [btnCopy, setBtnCopy] = useState("Copy json");
-  const { setQuestionsData, questionsData, surveySettings, setSurveySettings } = useSurvey();
+  const { setQuestionsData, questionsData, surveySettings, setSurveySettings, resetSurveyHandler } = useSurvey();
 
   useEffect(() => {
     form.setFieldsValue({
@@ -61,7 +61,10 @@ const JsonForm: React.FC = () => {
         </Button>
         <Button htmlType="submit">Set settings from pasted json</Button>
       </div>
-      <Button htmlType="button" onClick={() => setQuestionsData(sampleQuestionsTyped)}>
+      <Button htmlType="button" onClick={() => resetSurveyHandler()} className={classes.button}>
+        Clear
+      </Button>
+      <Button htmlType="button" onClick={() => setQuestionsData(sampleQuestionsTyped)} className={classes.button}>
         Set sample questions
       </Button>
     </Form>

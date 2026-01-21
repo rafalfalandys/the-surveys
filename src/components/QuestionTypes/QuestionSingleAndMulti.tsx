@@ -3,7 +3,7 @@ import Button from "antd/lib/button/button";
 import { Input } from "antd";
 import useQuestion from "../../hooks/useQuestion";
 import classes from "./QuestionSingleAndMulti.module.scss";
-import { type QuestionCheckbox, type QuestionRadio } from "../../types";
+import { type QuestionCheckbox, type QuestionRadio } from "../../types/surveyTypes";
 
 type QuestionSingleAndMultiProps = {
   questionIndex: number;

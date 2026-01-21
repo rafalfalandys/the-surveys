@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Input } from "antd";
 import { type RootState } from "../../store";
-import { type QuestionDate as DateType } from "../../types";
+import { type QuestionDate as DateType } from "../../types/surveyTypes";
 import useDate from "../../hooks/useDate";
 
 type QuestionDateProps = {

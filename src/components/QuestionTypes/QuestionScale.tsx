@@ -4,7 +4,7 @@ import ScaleLegend from "../SettingsComponents/ScaleLegend";
 import useQuestion from "../../hooks/useQuestion";
 import classes from "./QuestionScale.module.scss";
 import { type RootState } from "../../store";
-import { type QuestionScale as ScaleType } from "../../types";
+import { type QuestionScale as ScaleType } from "../../types/surveyTypes";
 
 type QuestionScaleProps = {
   questionIndex: number;

@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { SurveySettings, ValidationType } from "../types";
+import type { SurveySettings, ValidationType } from "../types/surveyTypes";
 
-const initialState: { settings: SurveySettings } = {
+const initialState: { title: string; settings: SurveySettings } = {
+  title: "Untitled Survey",
   settings: {
     description:
       "Hi, <br> Thanks for taking this survey. It's anonymous and its filling <strong>will not take longer than 1 minute.</strong>",
@@ -14,6 +15,12 @@ const surveySlice = createSlice({
   name: "survey",
   initialState,
   reducers: {
+    setInitialState() {
+      return initialState;
+    },
+    setTitle(state, action: { type: string; payload: string }) {
+      state.title = action.payload;
+    },
     setSurveySettings(state, action: { type: string; payload: SurveySettings }) {
       state.settings = action.payload;
     },
