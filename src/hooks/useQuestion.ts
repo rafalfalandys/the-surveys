@@ -36,11 +36,6 @@ const useQuestion = (questionIndex: number) => {
     dispatch(questionsActions.setQuestionData({ questionIndex, questionData: { limit: +value } }));
   };
 
-  const changeUploadImgHandler: React.ChangeEventHandler = (e) => {
-    const { checked } = e.target as HTMLInputElement;
-    dispatch(questionsActions.setQuestionData({ questionIndex, questionData: { uploadImg: checked } }));
-  };
-
   const legendMinHandler: React.ChangeEventHandler = (e) => {
     const { value } = e.target as HTMLInputElement;
     dispatch(questionsActions.setMinLegend({ questionIndex, value }));
@@ -76,7 +71,6 @@ const useQuestion = (questionIndex: number) => {
     changeTypeHandler,
     removeQuestionHandler,
     changeLimitHandler,
-    changeUploadImgHandler,
     legendMinHandler,
     legendMaxHandler,
     changeLengthHandler,
