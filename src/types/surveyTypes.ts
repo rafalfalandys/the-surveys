@@ -36,7 +36,6 @@ export type QuestionScale = Question & {
 export type QuestionOpen = Question & {
   type: "open";
   limit: number;
-  uploadImg: boolean;
 };
 
 export type QuestionDate = Question & {

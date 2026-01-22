@@ -20,7 +20,6 @@ export const DEFAULT_MAX_DATE = "";
 export const DEFAULT_MIN_DATE = "";
 export const DEFAULT_ENDS_SURVEY = false;
 export const DEFAULT_SHUFFLE_ANSWERS = false;
-export const DEFAULT_UPLOAD_IMG = false;
 
 export const EMPTY_ANSWER: Answer = {
   answer: "",
@@ -42,7 +41,6 @@ export const DEFAULT_OPEN: QuestionOpen = {
   ...getEmptyQuestion(),
   type: "open",
   limit: DEFAULT_CHARS_LIMIT,
-  uploadImg: DEFAULT_UPLOAD_IMG,
 };
 
 export const DEFAULT_SCALE: QuestionScale = {

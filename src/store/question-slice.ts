@@ -20,7 +20,6 @@ import {
   DEFAULT_MULTI,
   DEFAULT_SINGLE,
   DEFAULT_SHUFFLE_ANSWERS,
-  DEFAULT_UPLOAD_IMG,
 } from "../config";
 import { getEmptyQuestion } from "../helper";
 
@@ -221,8 +220,6 @@ const questionsSlice = createSlice({
           ...newQuestionBaseParams,
           type: "open",
           limit: (questionData as QuestionOpen).limit ?? (qState as QuestionOpen).limit ?? DEFAULT_CHARS_LIMIT,
-          uploadImg:
-            (questionData as QuestionOpen).uploadImg ?? (qState as QuestionOpen).uploadImg ?? DEFAULT_UPLOAD_IMG,
         };
       }
 
