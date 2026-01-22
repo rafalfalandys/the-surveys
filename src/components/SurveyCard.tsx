@@ -95,7 +95,7 @@ const SurveyCard = ({ survey, onDelete }: SurveyCardProps) => {
         description={
           <div>
             <Text type="secondary">
-              {survey.questionCount} {survey.questionCount === 1 ? "question" : "questions"}
+              {survey.questionsCount} {survey.questionsCount === 1 ? "question" : "questions"}
             </Text>
             <br />
             <Text type="secondary" className={classes.date}>

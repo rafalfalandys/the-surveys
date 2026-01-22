@@ -8,8 +8,8 @@ import {
   type QuestionScale,
 } from "./types/surveyTypes";
 
-// export const API_BASE_URL = "http://localhost:3000/api/v1";
-export const API_BASE_URL = "https://d22toyayshu5x5.cloudfront.net/api/v1";
+export const API_BASE_URL = "http://localhost:3000/api/v1";
+// export const API_BASE_URL = "https://d22toyayshu5x5.cloudfront.net/api/v1";
 
 export const DEFAULT_CHARS_LIMIT = 20;
 export const DEFAULT_SCALE_LENGTH = 5;

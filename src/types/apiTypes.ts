@@ -4,7 +4,7 @@ export type SurveyList = {
   _id: string;
   id: string;
   title: string;
-  questionCount: number;
+  questionsCount: number;
   createdAt: string;
   updatedAt: string;
 };
